@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href='<c:url value="resources/css/default.css" />' />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
@@ -25,7 +26,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">
-					<img src="../img/w3newbie.png"/>
+					<img src='<c:url value="resources/img/w3newbie.png" />' />
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -35,7 +36,6 @@
 					<li><a href="#">Product</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
-			
 			</div>
 		</div>
 	</nav>
@@ -50,7 +50,7 @@
 				
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img src="../img/mountains.png" class="img-responsive">
+						<img src='<c:url value="resources/img/mountains.png" />' class="img-responsive">
 						<div class="carousel-caption">
 							<h1>the hole new world</h1>
 							<br/>
@@ -58,10 +58,10 @@
 						</div>
 					</div> <!-- 1st image -->
 					<div class="item">
-						<img src="../img/snow.png" class="img-responsive">
+						<img src='<c:url value="resources/img/snow.png" />' class="img-responsive">
 					</div> <!-- 2nd image -->
 					<div class="item">
-						<img src="../img/red.png" class="img-responsive">
+						<img src='<c:url value="resources/img/red.png" />' class="img-responsive">
 					</div> <!-- 3rd image -->
 				</div> <!-- End of Images list -->
 				
@@ -81,13 +81,13 @@
 		<h2>What we are using</h2>
 		<div class="row">
 			<div class="col-sm-4">
-				<img src="../img/html5.png" id="icon">
+				<img src='<c:url value="resources/img/html5.png" />' id="icon">
 			</div>
 			<div class="col-sm-4">
-				<img src="../img/bootstrap.png" id="icon">
+				<img src='<c:url value="resources/img/bootstrap.png" />' id="icon">
 			</div>
 			<div class="col-sm-4">
-				<img src="../img/css3.png" id="icon">
+				<img src='<c:url value="resources/img/css3.png" />' id="icon">
 			</div>
 		</div>
 	</div> <!-- End of What we are using section -->
@@ -100,7 +100,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 			<div class="col-md-6">
-				<img src="../img/bootstrap2.jpg" class="img-responsive">
+				<img src='<c:url value="resources/img/bootstrap2.jpg" />' class="img-responsive">
 			</div>
 		</div>
 	</div> <!-- End of 2 columns section -->
@@ -124,7 +124,7 @@
 			</div>
 			
 			<div class="col-sm-4">
-				<img src="../img/bunny.png" id="icon">
+				<img src='<c:url value="resources/img/bunny.png" />' id="icon">
 			</div>
 		</div>
 	</footer>

@@ -10,7 +10,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
-import org.springframework.web.context.request.RequestAttributes;
 
 import info.nguyentai.testfilter.common.Constants;
 
