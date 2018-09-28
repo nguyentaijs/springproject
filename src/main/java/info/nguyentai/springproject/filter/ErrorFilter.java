@@ -1,4 +1,4 @@
-package info.nguyentai.testfilter.filter;
+package info.nguyentai.springproject.filter;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import info.nguyentai.testfilter.common.Constants;
+import info.nguyentai.springproject.common.Constants;
 
 public class ErrorFilter implements Filter{
 	
