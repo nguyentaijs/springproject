@@ -29,6 +29,12 @@
   		<param-value>info.nguyentai.configuration.MvcConfig</param-value>
   	</init-param>
   	
+  	<!-- Reload JSP | Remove it later -->
+  	<init-param>
+        <param-name>development</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    
   	<load-on-startup>1</load-on-startup>
   </servlet>
   

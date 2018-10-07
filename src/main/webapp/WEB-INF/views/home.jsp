@@ -6,39 +6,18 @@
 <title>${pageTitle}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href='<c:url value="resources/css/default.css" />' />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">
-					<img src='<c:url value="resources/img/w3newbie.png" />' />
-				</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Product</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<%@ include file="/WEB-INF/views/common/header.jsp" %>
+	<!-- End of header -->
 	<div class="container-fluid">
 		<div class="row">		
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -105,28 +84,7 @@
 		</div>
 	</div> <!-- End of 2 columns section -->
 	
-	<footer class="container-fluid text-center">
-		<div class="row">
-			<div class="col-sm-4">
-				<h3>Contact us</h3>
-				<br/>
-				<p>Our address and contact info here</p>
-			</div>
-			
-			<div class="col-sm-4">
-				<h3>Contact us</h3>
-				<br/>
-				<a href="#" class="fa fa-facebook"></a>
-				<a href="#" class="fa fa-twitter"></a>
-				<a href="#" class="fa fa-google"></a>
-				<a href="#" class="fa fa-linkedin"></a>
-				<a href="#" class="fa fa-youtube"></a>
-			</div>
-			
-			<div class="col-sm-4">
-				<img src='<c:url value="resources/img/bunny.png" />' id="icon">
-			</div>
-		</div>
-	</footer>
+	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
+	<!-- End of Footer -->
 </body>
 </html>
