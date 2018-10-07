@@ -2,12 +2,15 @@
 <script type="text/javascript">
 	$( document ).ready(function() {
 		var currentPage = '${requestScope['javax.servlet.forward.request_uri']}';
+		currentPage = currentPage.split('/')[1];
 		console.log(currentPage);
 		if (currentPage.indexOf('product') != -1) {
-			console.log("product");
+			$('li#product-link').addClass('active');
+		} else if (currentPage.indexOf('about') != -1) {
+			$('li#product-link').addClass('active');
+		} else if (currentPage.indexOf('contact') != -1) {
 			$('li#product-link').addClass('active');
 		} else {
-			console.log("home");
 			$('li#home-link').addClass('active');
 		}
 	});
