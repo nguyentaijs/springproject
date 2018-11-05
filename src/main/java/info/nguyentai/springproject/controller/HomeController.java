@@ -40,4 +40,11 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/home2", method = RequestMethod.GET)
+	public String home2(Model model) {
+		
+		model.addAttribute("pageTitle", pageTitle);
+		
+		return "home2";
+	}
 }
