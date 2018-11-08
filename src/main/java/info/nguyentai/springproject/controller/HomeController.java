@@ -31,20 +31,12 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
 	public String home(Model model) {
 		
 		model.addAttribute("pageTitle", pageTitle);
 		List<Category> categories = categoryService.getCategories();
 		
 		return "home";
-	}
-	
-	@RequestMapping(value = "/home2", method = RequestMethod.GET)
-	public String home2(Model model) {
-		
-		model.addAttribute("pageTitle", pageTitle);
-		
-		return "home2";
 	}
 }
