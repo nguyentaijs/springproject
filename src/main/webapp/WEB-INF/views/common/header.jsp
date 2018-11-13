@@ -2,15 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script type="text/javascript">
 	$( document ).ready(function() {
-		var currentPage = '${requestScope['javax.servlet.forward.request_uri']}';
-		currentPage = currentPage.split('/')[1];
-		console.log(currentPage);
-		if (currentPage.indexOf('product') != -1) {
-			$('li#product-link').addClass('active');
-		} else if (currentPage.indexOf('about') != -1) {
-			$('li#product-link').addClass('active');
-		} else if (currentPage.indexOf('contact') != -1) {
-			$('li#product-link').addClass('active');
+		var currentLocation = '${currentLocation}';
+		if (currentLocation.indexOf('post') != -1) {
+			$('li#post-link').addClass('active');
+		} else if (currentLocation.indexOf('about') != -1) {
+			$('li#about-link').addClass('active');
+		} else if (currentLocation.indexOf('contact') != -1) {
+			$('li#contact-link').addClass('active');
 		} else {
 			$('li#home-link').addClass('active');
 		}
@@ -25,14 +23,14 @@
 					class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#"> <img
-				src='<c:url value="resources/img/w3newbie.png" />' />
+				src="resources/img/w3newbie.png" />
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
 				<li id="home-link"><a href="${pageContext.request.contextPath}">Home</a></li>
 				<li id="about-link"><a href="#">About</a></li>
-				<li id="product-link"><a href="${pageContext.request.contextPath}/product">Product</a></li>
+				<li id="post-link"><a href="${pageContext.request.contextPath}/post">Post</a></li>
 				<li id="contact-link"><a href="#">Contact</a></li>
 			</ul>
 		</div>

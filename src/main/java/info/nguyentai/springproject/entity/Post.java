@@ -148,5 +148,10 @@ public class Post implements java.io.Serializable {
 	public void setSmallImgPath(String smallImgPath) {
 		this.smallImgPath = smallImgPath;
 	}
+	
+	@Override
+	public String toString() {
+		return this.id + ", " + this.title;
+	}
 
 }

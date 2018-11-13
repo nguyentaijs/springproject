@@ -19,9 +19,9 @@
    </definition>
  
    <!-- Post Page -->
-   <definition name="posts/*" extends="base-definition">  
+   <definition name="post" extends="base-definition">  
        <put-attribute name="title" value="Posts" />  
-       <put-attribute name="body" value="/WEB-INF/views/posts.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/views/post.jsp" />  
    </definition>  
        
    <!-- Contact-us Page
