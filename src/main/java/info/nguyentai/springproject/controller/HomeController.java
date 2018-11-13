@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import info.nguyentai.springproject.common.Constants;
 import info.nguyentai.springproject.entity.Category;
 import info.nguyentai.springproject.service.CategoryService;
 
@@ -18,7 +19,8 @@ import info.nguyentai.springproject.service.CategoryService;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+@RequestMapping(value = "/")
+public class HomeController extends GenericController{
 	
 	@Value ("${system.page}")
 	private String pageTitle;
@@ -31,12 +33,16 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "home"}, method = RequestMethod.GET)
 	public String home(Model model) {
-		
 		model.addAttribute("pageTitle", pageTitle);
 		List<Category> categories = categoryService.getCategories();
 		
 		return "home";
+	}
+
+	@Override
+	public void setCurrentLocation() {
+		this.currentLocation = Constants.CURRENT_LOCATION.HOME;
 	}
 }
