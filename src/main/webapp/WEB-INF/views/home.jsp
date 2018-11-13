@@ -11,7 +11,7 @@
 			
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="${pageContext.request.contextPath}/resources/img/mountains.png" class="img-responsive">
+					<img src="resources/img/mountains.png" class="img-responsive">
 					<div class="carousel-caption">
 						<h1>the hole new world</h1>
 						<br/>
@@ -19,10 +19,10 @@
 					</div>
 				</div> <!-- 1st image -->
 				<div class="item">
-					<img src="${pageContext.request.contextPath}/resources/img/snow.png" class="img-responsive">
+					<img src="resources/img/snow.png" class="img-responsive">
 				</div> <!-- 2nd image -->
 				<div class="item">
-					<img src="${pageContext.request.contextPath}/resources/img/red.png" class="img-responsive">
+					<img src="resources/img/red.png" class="img-responsive">
 				</div> <!-- 3rd image -->
 			</div> <!-- End of Images list -->
 			
@@ -42,13 +42,13 @@
 	<h2>What we are using</h2>
 	<div class="row">
 		<div class="col-sm-4">
-			<img src='<c:url value="resources/img/html5.png" />' id="icon">
+			<img src="resources/img/html5.png" id="icon">
 		</div>
 		<div class="col-sm-4">
-			<img src='<c:url value="resources/img/bootstrap.png" />' id="icon">
+			<img src="resources/img/bootstrap.png" id="icon">
 		</div>
 		<div class="col-sm-4">
-			<img src='<c:url value="resources/img/css3.png" />' id="icon">
+			<img src="resources/img/css3.png" id="icon">
 		</div>
 	</div>
 </div> <!-- End of What we are using section -->
@@ -61,7 +61,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="col-md-6">
-			<img src='<c:url value="resources/img/bootstrap2.jpg" />' class="img-responsive">
+			<img src="resources/img/bootstrap2.jpg" class="img-responsive">
 		</div>
 	</div>
 </div> <!-- End of 2 columns section -->

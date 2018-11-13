@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="col-sm-4">
-			<img src='<c:url value="resources/img/bunny.png" />' id="icon">
+			<img src="resources/img/bunny.png" id="icon">
 		</div>
 	</div>
 </footer>
