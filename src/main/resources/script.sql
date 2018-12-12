@@ -1,55 +1,43 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
---
--- Host: localhost    Database: nguyentaijs
--- ------------------------------------------------------
--- Server version	5.7.24-0ubuntu0.16.04.1
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.7.23-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL Version:             9.5.0.5196
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `category`
---
 
-DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category` (
+-- Dumping database structure for nguyentaijs
+CREATE DATABASE IF NOT EXISTS `nguyentaijs` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `nguyentaijs`;
+
+-- Dumping structure for table nguyentaijs.category
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `path` varchar(255) NOT NULL,
   `display_order` int(2) NOT NULL DEFAULT '0',
   `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0 - newly created',
-  `parent_id` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `category`
---
-
-LOCK TABLES `category` WRITE;
+-- Dumping data for table nguyentaijs.category: ~6 rows (approximately)
+DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Languages',0,0,NULL),(2,'Flowers & Herbs',1,0,NULL),(3,'Java',0,0,1),(4,'English',0,0,1),(5,'Japanese',0,0,1),(6,'Books',0,0,NULL),(7,'Anime & Films',0,0,NULL);
+INSERT INTO `category` (`id`, `name`, `path`, `display_order`, `status`) VALUES
+	(1, '_languages', 'languages', 3, 0),
+	(2, '_images', 'images', 4, 0),
+	(3, '_code', 'code', 0, 0),
+	(4, '_books', 'books', 1, 0);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `post`
---
-
-DROP TABLE IF EXISTS `post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `post` (
+-- Dumping structure for table nguyentaijs.post
+CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `category_id` int(11) unsigned NOT NULL,
@@ -62,24 +50,12 @@ CREATE TABLE `post` (
   `small_img_path` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `post`
---
-
-LOCK TABLES `post` WRITE;
+-- Dumping data for table nguyentaijs.post: ~0 rows (approximately)
+DELETE FROM `post`;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-11-05  0:05:22

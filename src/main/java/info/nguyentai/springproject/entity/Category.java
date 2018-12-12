@@ -13,13 +13,13 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "category", catalog = "nguyentaijs")
-public class Category implements java.io.Serializable {
+public class Category implements java.io.Serializable, Comparable<Category> {
 
 	private Integer id;
 	private String name;
+	private String path;
 	private int displayOrder;
 	private byte status;
-	private Integer parentId;
 
 	public Category() {
 	}
@@ -29,12 +29,12 @@ public class Category implements java.io.Serializable {
 		this.displayOrder = displayOrder;
 		this.status = status;
 	}
-
-	public Category(String name, int displayOrder, byte status, Integer parentId) {
+	
+	public Category(String name, int displayOrder, byte status, String path) {
 		this.name = name;
 		this.displayOrder = displayOrder;
 		this.status = status;
-		this.parentId = parentId;
+		this.path = path;
 	}
 
 	@Id
@@ -76,13 +76,68 @@ public class Category implements java.io.Serializable {
 		this.status = status;
 	}
 
-	@Column(name = "parent_id")
-	public Integer getParentId() {
-		return this.parentId;
+	@Column(name = "path", nullable = false)
+	public String getPath() {
+		return path;
 	}
 
-	public void setParentId(Integer parentId) {
-		this.parentId = parentId;
+	public void setPath(String path) {
+		this.path = path;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + displayOrder;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((path == null) ? 0 : path.hashCode());
+		result = prime * result + status;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Category other = (Category) obj;
+		if (displayOrder != other.displayOrder)
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (path == null) {
+			if (other.path != null)
+				return false;
+		} else if (!path.equals(other.path))
+			return false;
+		if (status != other.status)
+			return false;
+		return true;
+	}
+
+	@Override
+	public int compareTo(Category anotherCategory) {
+		if (this.displayOrder > anotherCategory.displayOrder) {
+			return 1;
+		} else if (this.displayOrder < anotherCategory.displayOrder) {
+			return -1;
+		}
+		return 0;
+	}
+
+	
 
 }

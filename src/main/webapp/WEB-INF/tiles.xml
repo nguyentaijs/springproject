@@ -22,7 +22,13 @@
    <definition name="post" extends="base-definition">  
        <put-attribute name="title" value="Posts" />  
        <put-attribute name="body" value="/WEB-INF/views/post.jsp" />  
-   </definition>  
+   </definition>
+   
+   <!-- Images Page -->
+   <definition name="images" extends="base-definition">  
+       <put-attribute name="title" value="Images" />  
+       <put-attribute name="body" value="/WEB-INF/views/images.jsp" />  
+   </definition>
        
    <!-- Contact-us Page
    <definition name="contactus" extends="base-definition">  

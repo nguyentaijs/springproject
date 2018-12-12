@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 
-import info.nguyentai.springproject.entity.Category;
+import info.nguyentai.springproject.dto.CategoryDTO;
 
 public interface CategoryService {
 	
-	public List<Category> getCategories() throws HibernateException;
+	public List<CategoryDTO> getCategories() throws HibernateException;
 
 }

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import info.nguyentai.springproject.dao.CategoryDao;
-import info.nguyentai.springproject.entity.Category;
+import info.nguyentai.springproject.dto.CategoryDTO;
 import info.nguyentai.springproject.service.CategoryService;
 
 @Transactional
@@ -20,7 +20,7 @@ public class CategoryServiceImpl implements CategoryService {
 	private CategoryDao categoryDao;
 	
 	@Override
-	public List<Category> getCategories() throws HibernateException {
+	public List<CategoryDTO> getCategories() throws HibernateException {
 		return categoryDao.getCategories();
 	}
 	
